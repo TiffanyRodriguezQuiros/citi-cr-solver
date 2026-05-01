@@ -29,6 +29,7 @@ if st.button("🚀 Optimizar ahora"):
 
     if estado != "Optimal":
         st.error("No se encontró una solución óptima con los parámetros seleccionados.")
+
     else:
         st.success(f"✅ Z* = {z:.2f} horas de ciclo óptimo")
 
@@ -45,13 +46,14 @@ if st.button("🚀 Optimizar ahora"):
 
         st.bar_chart(datos, x="Proceso", y="Analistas")
 
-        st.write(
-            f"La solución óptima asigna **{x1:.2f} analistas a SWIFT**, "
-            f"**{x2:.2f} a cartas de crédito** y "
-            f"**{x3:.2f} a garantías**. "
-            f"El valor mínimo de la función objetivo es **{z:.2f}**."
+        texto = (
+            f"La solución óptima asigna {x1:.2f} analistas a SWIFT, "
+            f"{x2:.2f} a cartas de crédito y "
+            f"{x3:.2f} a garantías. "
+            f"El valor mínimo de la función objetivo es {z:.2f}."
         )
+
+        st.write(texto)
+
 else:
-    st.info("Ajustá los parámetros en la barra lateral y presioná **Optimizar ahora**.")
-        f'El valor mínimo de la función objetivo es {z:.0f}.'
-    )
+    st.info("Ajustá los parámetros en la barra lateral y presioná Optimizar ahora.")
